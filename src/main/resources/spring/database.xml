@@ -12,9 +12,9 @@
     <!--声明数据源-->
     <bean name="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           p:driverClassName="com.mysql.jdbc.Driver"
-          p:url="${db-url}?useUnicode=true&amp;characterEncoding=utf-8&amp;allowMultiQueries=true"
-          p:username="${db-username}"
-          p:password="${db-password}">
+          p:url="@db-url@?useUnicode=true&amp;characterEncoding=utf-8&amp;allowMultiQueries=true"
+          p:username="@db-username@"
+          p:password="@db-password@">
 
     </bean>
 

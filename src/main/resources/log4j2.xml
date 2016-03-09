@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="DEBUG">
+    <Properties>
+        <Property name="log-path">logs</Property>
+        <property name="stat-name">stat</property>
+        <property name="server-name">global</property>
+    </Properties>
+
+    <appenders>
+        <!--通用的控制台输出目标-->
+        <Console name="consolePrint" target="SYSTEM_OUT">
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n"/>
+        </Console>
+
+        <!--用于存放日常的Controller访问情况,记录WARN及以上错误-->
+        <RollingFile name="controller-daily-file"
+                     fileName="${log-path}/controller/controller.log"
+                     filePattern="${log-path}/controller/$${date:yyyy-MM}/controller-%d{yyyy-MM-dd}-%i.log.gz">
+            <JSONLayout>
+                <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n</pattern>
+            </JSONLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="250 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+
+        <!--用于资源请求处理和其结果的日志记录-->
+        <RollingFile name="resource-bag-log"
+                     fileName="${log-path}/${date:yyyy-MM-dd}/resource-bag-log.log"
+                     filePattern="${log-path}/${date:yyyy-MM-dd}/controller-%d{yyyy-MM-dd-HH}-%i.log.gz">
+            <JSONLayout>
+                <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n</pattern>
+            </JSONLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="250 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+
+    </appenders>
+
+    <loggers>
+
+        <logger name="com.lf.controller" level="warn" additivity="false">
+            <appender-ref ref="controller-daily-file"/>
+        </logger>
+
+        <!--用于resourcebag中的日志记录-->
+        <logger name="com.lf.resourcebag" level="info" additivity="false">
+            <appender-ref ref="resource-bag-log" level="info"/>
+        </logger>
+
+        <root level="warn">
+            <appender-ref ref="consolePrint"/>
+        </root>
+
+
+        <!-- 3rdparty Loggers -->
+        <logger name="org.springframework.core" level="info">
+        </logger>
+        <logger name="org.springframework.beans" level="info">
+        </logger>
+        <logger name="org.springframework.context" level="info">
+        </logger>
+        <logger name="org.springframework.web" level="info">
+        </logger>
+        <logger name="org.jboss.netty" level="warn">
+        </logger>
+        <logger name="org.apache.http" level="warn">
+        </logger>
+        <logger name="com.mchange.v2" level="warn">
+        </logger>
+    </loggers>
+
+</configuration>

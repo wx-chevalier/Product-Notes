@@ -1,7 +1,6 @@
 package wx.application.filter;
 
 import com.alibaba.fastjson.JSONObject;
-import org.apache.log4j.Logger;
 import org.springframework.web.util.NestedServletException;
 import wx.rarf.utils.ErrorConfig;
 import wx.rarf.utils.HJSONObject;
@@ -23,7 +22,6 @@ import java.util.stream.Collectors;
  */
 public class SystemFilter implements Filter {
     // 日志
-    private static final Logger LOG = Logger.getLogger("op");
 
     public void destroy() {
         // TODO Auto-generated method stub
@@ -110,7 +108,6 @@ public class SystemFilter implements Filter {
                         rtn.put("code", code);
                         rtn.put("subCode", subCode);
                         rtn.put("desc", desc);
-                        LOG.warn(desc);
                         PrintWriter out = response.getWriter();
                         out.print(responseHandler(rtn, req));
                         out.close();
@@ -120,7 +117,6 @@ public class SystemFilter implements Filter {
                     HJSONObject rtn = new HJSONObject();
                     String desc = e.getMessage();
                     rtn.put("desc", desc);
-                    LOG.warn(desc);
                     PrintWriter out = response.getWriter();
                     out.print(responseHandler(rtn, req));
                     out.close();
