@@ -6,23 +6,10 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd
-	http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
 	http://www.springframework.org/schema/tx
 	http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 
-    <!--配置组件扫描-->
-    <context:component-scan base-package="wx"></context:component-scan>
 
-    <!--导入外部配置文件-->
-    <!--所有数据库的配置-->
-    <import resource="classpath:spring/database.xml"/>
-
-    <bean id="defaultLobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler"
-          lazy-init="true"/>
-
-
-    <bean id="schedulerFactoryBean"
-          class="org.springframework.scheduling.quartz.SchedulerFactoryBean"/>
 
 </beans>

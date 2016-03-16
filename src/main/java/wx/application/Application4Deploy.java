@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by apple on 16/3/9.
  */
-@Configuration
-@ComponentScan
 @EnableAutoConfiguration
-//@ImportResource("classpath:spring/applicationContext.xml")
+@ImportResource("classpath:spring/applicationContext.xml")
 public class Application4Deploy extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
