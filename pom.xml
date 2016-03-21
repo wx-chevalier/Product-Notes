@@ -149,9 +149,17 @@
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.3.2</version>
                 <configuration>
-                    <verbose>true</verbose>
+                    <configurationFile>${basedir}/src/main/resources/mybatis/generatorConfig.xml</configurationFile>
                     <overwrite>true</overwrite>
+                    <verbose>true</verbose>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>5.1.38</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
 
@@ -280,6 +288,11 @@
             <groupId>com.github.javaplugs</groupId>
             <artifactId>mybatis-java-time</artifactId>
             <version>0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>3.3.7</version>
         </dependency>
 
         <!--系统与进程-->
