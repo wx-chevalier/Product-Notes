@@ -30,7 +30,7 @@
 
 <generatorConfiguration>
 
-    <classPathEntry location="doc/libs/mysql-connector-java-5.1.38.jar"/>
+    <!--<classPathEntry location="doc/libs/mysql-connector-java-5.1.38.jar"/>-->
 
 
     <context id="MysqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
