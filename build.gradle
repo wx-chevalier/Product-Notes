@@ -84,6 +84,7 @@ dependencies {
     }
     compile group: 'org.springframework', name: 'spring-jdbc', version: '4.2.2.RELEASE'
     compile group: 'org.springframework', name: 'spring-test', version: '4.2.2.RELEASE'
+    compile("org.springframework.boot:spring-boot-starter-actuator")
     compile group: 'org.assertj', name: 'assertj-core', version: '1.6.1'
     compile group: 'com.github.wxyyxc1992', name: 'WXJavaToolkits', version: '0.0.2'
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.3'
@@ -117,4 +118,6 @@ dependencies {
         This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
         Please review and delete this closure when resolved. */
     }
+
+    testCompile("org.springframework.boot:spring-boot-starter-test")
 }

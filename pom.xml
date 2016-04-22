@@ -23,12 +23,9 @@
             <id>dev</id>
             <properties>
                 <!--数据库设计-->
-                <db-url>jdbc:mysql://hoteammysql2.mysql.rds.aliyuncs.com:3306/liveforest</db-url>
-                <db-username>hoteam_db</db-username>
-                <db-password>hoteamConfig1314</db-password>
+                <activeProfiles>dev</activeProfiles>
 
                 <packaging-target>jar</packaging-target>
-
                 <!--依赖作用域设计-->
                 <spring-boot-jetty-scope>compiled</spring-boot-jetty-scope>
                 <spring-boot-main-class>wx.application.Application</spring-boot-main-class>
@@ -41,13 +38,11 @@
 
         <profile>
             <!-- 开发环境 -->
-            <id>pro</id>
+            <id>prod</id>
             <properties>
-                <db-url>jdbc:mysql://hoteammysql2.mysql.rds.aliyuncs.com:3306/liveforest</db-url>
-                <db-username>hoteam_db</db-username>
-                <db-password>hoteamConfig1314</db-password>
-                <packaging-target>jar</packaging-target>
+                <activeProfiles>prod</activeProfiles>
 
+                <packaging-target>jar</packaging-target>
                 <spring-boot-jetty-scope>compiled</spring-boot-jetty-scope>
                 <spring-boot-main-class>wx.application.Application</spring-boot-main-class>
 
@@ -60,9 +55,7 @@
             <!--  mvn package -P deploy  -->
             <id>deploy</id>
             <properties>
-                <db-url>jdbc:mysql://hoteammysql2.mysql.rds.aliyuncs.com:3306/liveforest</db-url>
-                <db-username>hoteam_db</db-username>
-                <db-password>hoteamConfig1314</db-password>
+                <activeProfiles>deploy</activeProfiles>
 
                 <packaging-target>war</packaging-target>
                 <spring-boot-jetty-scope>provided</spring-boot-jetty-scope>
@@ -249,6 +242,11 @@
             <artifactId>assertj-core</artifactId>
             <version>1.6.1</version>
             <!--<scope>test</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
 
