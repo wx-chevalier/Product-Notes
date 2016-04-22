@@ -12,6 +12,7 @@ gen### Java template
 .mtj.tmp/
 
 # Package Files #
+/.gradletasknamecache
 # *.jar
 *.war
 *.ear
