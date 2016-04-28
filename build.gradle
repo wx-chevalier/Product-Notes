@@ -42,6 +42,7 @@ bootRun {
     systemProperty 'spring.profiles.active', 'dev'
 }
 
+//打包成Jar包
 bootRepackage {
     mainClass = "wx.application.Application4Deploy"
 }
@@ -49,10 +50,12 @@ bootRepackage {
 //配置多打包环境
 task prod << {
     bootRun.systemProperty 'spring.profiles.active', 'prod'
+//    project.setProperty("activeProfiles","prod")
 }
 
 task deploy << {
     bootRun.systemProperty 'spring.profiles.active', 'deploy'
+//    project.setProperty("activeProfiles","deploy")
 }
 
 //配置资源过滤
@@ -60,7 +63,7 @@ task deploy << {
 processResources {
 
     filter org.apache.tools.ant.filters.ReplaceTokens, tokens: [
-            activeProfiles: project.getProperties().containsKey('activeProfiles') ? project.property('activeProfiles') : 'deploy'  //默认值只会用在打包部署的情况下,因此使用deploy配置文件
+//            activeProfiles: project.getProperties().containsKey('activeProfiles') ? project.property('activeProfiles') : 'deploy'  //默认值只会用在打包部署的情况下,因此使用deploy配置文件
     ]
 
 }
@@ -82,9 +85,11 @@ dependencies {
         exclude(module: 'spring-boot-starter-tomcat')
         exclude(module: 'spring-boot-starter-logging')
     }
+    compile("org.springframework.boot:spring-boot-starter-actuator"){
+        exclude(module: 'spring-boot-starter-logging')
+    }
     compile group: 'org.springframework', name: 'spring-jdbc', version: '4.2.2.RELEASE'
     compile group: 'org.springframework', name: 'spring-test', version: '4.2.2.RELEASE'
-    compile("org.springframework.boot:spring-boot-starter-actuator")
     compile group: 'org.assertj', name: 'assertj-core', version: '1.6.1'
     compile group: 'com.github.wxyyxc1992', name: 'WXJavaToolkits', version: '0.0.2'
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.3'
@@ -117,7 +122,10 @@ dependencies {
         /* This dependency was originally in the Maven provided scope, but the project was not of type war.
         This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
         Please review and delete this closure when resolved. */
+        exclude(module: 'spring-boot-starter-logging')
     }
 
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("org.springframework.boot:spring-boot-starter-test"){
+        exclude(module: 'spring-boot-starter-logging')
+    }
 }

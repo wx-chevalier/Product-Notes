@@ -33,10 +33,23 @@ public class Application {
         System.out.println("Let's inspect the beans provided by Spring Boot:");
 
         String[] beanNames = ctx.getBeanDefinitionNames();
+
         Arrays.sort(beanNames);
+
+        //列举出所有装载进来的Bean的名称
         for (String beanName : beanNames) {
-            System.out.println(beanName);
+            if(!beanName.contains("org.springframework")){
+                System.out.println(beanName);
+            }
         }
+
+        //列举出关键配置
+        //数据库配置
+        System.out.println("数据库核心配置为:");
+
+        BasicDataSource basicDataSource = (BasicDataSource) ctx.getBean("dataSource");
+
+        System.out.println(basicDataSource.getUrl());
 
     }
 
