@@ -4,7 +4,7 @@
   - [Maven](#maven)
   - [Gradle](#gradle)
 
-# RARF-Java
+# SpringMVC Boilerplate
 Implementation of Reactive Abstract Resource Flow Architecture Style In Java With Spring
 
 ## Features
