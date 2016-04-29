@@ -1,6 +1,7 @@
 package wx.application.filter;
 
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.stereotype.Component;
 import org.springframework.web.util.NestedServletException;
 import wx.rarf.utils.ErrorConfig;
 import wx.rarf.utils.HJSONObject;
@@ -20,6 +21,7 @@ import java.util.stream.Collectors;
  * @function 系统过滤器
  * @date: 2014-11-21
  */
+@Component
 public class SystemFilter implements Filter {
     // 日志
 

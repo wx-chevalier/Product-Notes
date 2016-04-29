@@ -7,6 +7,7 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import wx.rarf.resource.entity.Entity;
+import wx.rarf.utils.InjectableWorker;
 
 /**
  * Created by apple on 15/12/4.
@@ -40,11 +41,6 @@ public class ResourceModel<T extends Entity> {
         transactionManager.commit(status);
         return true;
 
-    }
-
-    @FunctionalInterface
-    public interface InjectableWorker {
-        public void doWork() throws Exception;
     }
 
     /**

@@ -28,3 +28,8 @@ Implementation of Reactive Abstract Resource Flow Architecture Style In Java Wit
 - gradle deploy bootRun:运行部署环境
 
 - gradle bootRepackage:打包成Jar包可以独立运行/放置在Jetty下运行
+
+# 前后端数据交换原则
+(1)数据格式
+时间格式:所有时间格式以Unix时间戳进行交换,为Long型整数,切记不可有小数点.
+(2)用户认证信息
