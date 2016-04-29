@@ -8,5 +8,5 @@ import wx.rarf.utils.throwable.LFThrowable;
  */
 @FunctionalInterface
 public interface InjectableWorkerWithUniResourceBag {
-    public Action doWork(UniResourceBag uniResourceBag, Action action) throws Exception;
+    public Action doWork(UniResourceBag uniResourceBag, Action action) throws Exception, LFThrowable;
 }

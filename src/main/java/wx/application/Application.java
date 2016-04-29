@@ -23,6 +23,7 @@ import java.util.Arrays;
  * Created by apple on 16/3/8.
  */
 @EnableAutoConfiguration
+@WebAppConfiguration
 @ImportResource("classpath:spring/applicationContext.xml")
 public class Application {
 
