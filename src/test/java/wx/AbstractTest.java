@@ -13,9 +13,9 @@ import wx.application.Application;
  * Created by apple on 16/4/29.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
+@WebAppConfiguration
 @ActiveProfiles("dev")
 @SpringApplicationConfiguration(classes = {Application.class, MockServletContext.class})
-@WebAppConfiguration
 @ImportResource("classpath:spring/applicationContext.xml")
 public class AbstractTest {
 }

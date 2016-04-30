@@ -44,7 +44,6 @@ public class LoginControllerTest extends AbstractTest {
 
         requestData.put("password", 123456);
 
-
         mvc.perform(MockMvcRequestBuilders
                 .get("/login/123456")
                 .param("requestData", requestData.toString())
