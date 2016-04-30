@@ -1,6 +1,6 @@
-本文的地址：[]()
+本文的地址：[这里](https://github.com/wxyyxc1992/SpringMVC-Boilerplate/blob/master/doc/springmvc/rarf/redux-inspired-springmvc-controller-coding-style-with-rxjava.md)
 
-本文的代码地址：[]()
+本文的代码地址：[SpringMVC-Boilerplate](https://github.com/wxyyxc1992/SpringMVC-Boilerplate)
 
 在笔者之前关于[RARF](https://segmentfault.com/a/1190000004600730)的描述中，曾提及基于MVC风格的业务模块代码架构中存在的一些问题。彼时笔者推崇的是基于URFP的链式逻辑组织，换言之，一个完整的业务逻辑有数个ResourceHandler链接完成。但是在实践中这种方式并不是适用于全部的情况，很多时候，从一个正常的思维角度来说，我们还是习惯于去写**面条式**的代码，即在一个Controller中通过调用多个Service进行一条业务逻辑线的处理，本文笔者即是在编写这种面条式的逻辑代码的前提下，自己思索的一些实践。
 
