@@ -65,6 +65,7 @@ local.properties
 /target/
 /logs/
 /springmvc/build
+/externalservice/build
 /log/
 /build/
 /gradle/

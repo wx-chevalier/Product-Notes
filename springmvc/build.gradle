@@ -1,5 +1,14 @@
 import org.apache.tools.ant.filters.*
 
+//独立于所有项目之外,设置buildscript
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE")
+    }
+}
 
 /**
  * @region 插件应用于基本脚本
@@ -66,6 +75,7 @@ repositories {
 
 //配置依赖
 dependencies {
+
     compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
     compile(group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.3.3.RELEASE') {
         exclude(module: 'spring-boot-starter-tomcat')

@@ -35,6 +35,8 @@ public class Application {
 
         String[] beanNames = ctx.getBeanDefinitionNames();
 
+        wx.externalservice.HelloWorld helloWorld;
+
         Arrays.sort(beanNames);
 
         //列举出所有装载进来的Bean的名称
