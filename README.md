@@ -33,3 +33,22 @@ Implementation of Reactive Abstract Resource Flow Architecture Style In Java Wit
 (1)数据格式
 时间格式:所有时间格式以Unix时间戳进行交换,为Long型整数,切记不可有小数点.
 (2)用户认证信息
+
+# Coding Style
+## Controller
+```java
+@RestController
+public class CustomController extends BasicController{
+
+    @RequestMapping("/{pathVariable}")
+    public String handler(
+        String user_id, //在切面中完成用户认证与替换,不一定存在
+        @PathVariable("pathVariable") String pathVariable,
+        String action,
+        JSONObject requestData, //请求数据,在切面中完成注入,必有数据
+        HttpServletResponse response //由Spring自动完成注入
+    ){
+
+    }
+}
+```

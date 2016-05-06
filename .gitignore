@@ -1,3 +1,6 @@
+/springmvc/logs
+/gradlew.bat
+/gradlew
 ### Example user template template
 ### Example user template
 
@@ -61,6 +64,8 @@ local.properties
 .texlipse
 /target/
 /logs/
+/springmvc/build
 /log/
 /build/
 /gradle/
+build/

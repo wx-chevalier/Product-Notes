@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+~ The MIT License (MIT)
+~
+~ Copyright (c) 2014 abel533@gmail.com
+~
+~ Permission is hereby granted, free of charge, to any person obtaining a copy
+~ of this software and associated documentation files (the "Software"), to deal
+~ in the Software without restriction, including without limitation the rights
+~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+~ copies of the Software, and to permit persons to whom the Software is
+~ furnished to do so, subject to the following conditions:
+~
+~ The above copyright notice and this permission notice shall be included in
+~ all copies or substantial portions of the Software.
+~
+~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+~ THE SOFTWARE.
+-->
+
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!--<classPathEntry location="doc/libs/mysql-connector-java-5.1.38.jar"/>-->
+
+
+    <context id="MysqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+            <property name="caseSensitive" value="true"/>
+        </plugin>
+
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://hoteammysql2.mysql.rds.aliyuncs.com:3306/liveforest"
+                        userId="hoteam_db"
+                        password="hoteamConfig1314">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="test.model"
+                            targetProject="src/main/java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="test.xml"
+                         targetProject="src/main/java"/>
+
+        <javaClientGenerator type="MIXEDMAPPER" targetPackage="test.dao"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="%">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+    </context>
+</generatorConfiguration>
