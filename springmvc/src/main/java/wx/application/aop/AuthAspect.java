@@ -69,7 +69,7 @@ public class AuthAspect {
 
 
         //获取返回对象
-        HttpServletResponse response = (HttpServletResponse) args[args.length - 1];
+//        HttpServletResponse response = (HttpServletResponse) args[args.length - 1];
 
 //        Optional<String> result = userTokenServiceImpl.queryUserIdByTokenAsync(user_token).toBlocking().first();
 //
