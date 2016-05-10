@@ -38,7 +38,6 @@ public class LoginController {
                 //判断用户提交的信息是否有效
                 .requestHandler((uniResourceBag, action) -> {
 
-
                     JSONObject requestData = UniResourceBag.parseRequestData(this.request, "username", "password");
 
                     return new Action("RequestDataReady")

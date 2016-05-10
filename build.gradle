@@ -1,5 +1,3 @@
-
-
 allprojects {
 
     apply plugin: 'java'
@@ -9,20 +7,15 @@ allprojects {
 
 }
 
-subprojects {
 
-}
-
-
-project(':springmvc') {
+project(':api') {
 
     dependencies {
-        compile project(":externalservice")
+        compile project(":configuration")
+        compile project(":external")
     }
 
 }
-
-
 
 // Define an extra property
 ext.srcDirName = 'src/main/java'

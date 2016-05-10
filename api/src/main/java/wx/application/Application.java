@@ -1,21 +1,12 @@
 package wx.application;
 
-import com.squareup.okhttp.OkHttpClient;
 import org.apache.commons.dbcp.BasicDataSource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.context.ApplicationContext;
-import wx.webservice.hessian.server.HessianConfiguration;
+import wx.externalservice.HelloWorld;
 
 import java.util.Arrays;
 
@@ -35,7 +26,9 @@ public class Application {
 
         String[] beanNames = ctx.getBeanDefinitionNames();
 
-        wx.externalservice.HelloWorld helloWorld;
+        wx.externalservice.HelloWorld helloWorld = new HelloWorld();
+
+        helloWorld.sayHello();
 
         Arrays.sort(beanNames);
 

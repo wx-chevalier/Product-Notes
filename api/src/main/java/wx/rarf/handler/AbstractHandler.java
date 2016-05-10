@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(locations = {"classpath:spring/applicationContext.xml"})
+@ContextConfiguration(locations = {"classpath:common/resources/spring/applicationContext.xml"})
 public abstract class AbstractHandler<T extends Entity> {
 
     /**

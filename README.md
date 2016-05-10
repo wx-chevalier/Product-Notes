@@ -1,8 +1,19 @@
-- [RARF-Java](#rarf-java)
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [SpringMVC Boilerplate](#springmvc-boilerplate)
   - [Features](#features)
-- [Run](#run)
-  - [Maven](#maven)
-  - [Gradle](#gradle)
+- [Quick Start](#quick-start)
+  - [Run](#run)
+  - [Project Structure](#project-structure)
+  - [Mybatis Generator:自动生成Model](#mybatis-generator%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90model)
+  - [Flyway:DataBase Migration](#flywaydatabase-migration)
+- [Data Format](#data-format)
+- [Coding Style](#coding-style)
+  - [Controller](#controller)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # SpringMVC Boilerplate
 Implementation of Reactive Abstract Resource Flow Architecture Style In Java With Spring
@@ -10,26 +21,38 @@ Implementation of Reactive Abstract Resource Flow Architecture Style In Java Wit
 ## Features
 - Hessian WebService Example
 
-# Run
-## Maven
-- mvn install : 安装基本的Maven依赖项
+# Quick Start
+## Run
 
-- mvn spring-boot:run : 从wx.application.Application开始运行服务器
+- gradle bootRun :运行开发环境
 
-- mvn package -Ppro : 按照开发环境打包成jar文件
+- gradle prod bootRun :运行生产环境
 
-- mvn package -Pdeploy : 按照部署环境打包成war文件
+- gradle deploy bootRun :运行部署环境
 
-## Gradle
-- gradle bootRun:运行开发环境
+- gradle bootRepackage :打包成Jar包可以独立运行/放置在Jetty下运行
 
-- gradle prod bootRun:运行生产环境
+## Project Structure
+在一个正常的MVC项目中,我们会包含Controller,Service与Model这几个部分.传统而言我们会在一个Java项目中的不同的包内进行代码分割，而在SpringMVC-Boilerplate中，我们是利用Gradle的Multiple Projects机制来在项目级别进行代码分割的，这样的好处有：
+（1）在团队协作中，能够更好地分割任务，同时避免了因为其他模块错误而带来的本部分的开发进度受阻。同时在微服务概念盛行的今天，能够尽可能地减少CodeBase的大小，避免大量冗余的重复代码。
 
-- gradle deploy bootRun:运行部署环境
+（2）在单元测试中，可以以更清晰的粒度进行单元测试。
 
-- gradle bootRepackage:打包成Jar包可以独立运行/放置在Jetty下运行
+（3）发布或者持续集成的时候，如果某个子模块发生错误主模块可以选择使用该子模块的最近一次编译成功的Jar包作为依赖，尽可能地减少局部错误对整体发布带来的影响。
 
-# 前后端数据交换原则
+
+
+```
+--rootProject：根项目
+	-- api：存放接口，即传统的Controller层
+```
+
+
+
+## Mybatis Generator:自动生成Model
+## Flyway:DataBase Migration
+
+# Data Format
 (1)数据格式
 时间格式:所有时间格式以Unix时间戳进行交换,为Long型整数,切记不可有小数点.
 (2)用户认证信息

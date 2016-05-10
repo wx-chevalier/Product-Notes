@@ -1,4 +1,4 @@
-/springmvc/logs
+/api/logs
 /gradlew.bat
 /gradlew
 ### Example user template template
@@ -64,8 +64,8 @@ local.properties
 .texlipse
 /target/
 /logs/
-/springmvc/build
-/externalservice/build
+/api/build
+/external/build
 /log/
 /build/
 /gradle/

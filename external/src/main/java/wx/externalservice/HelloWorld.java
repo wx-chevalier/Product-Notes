@@ -6,7 +6,7 @@ package wx.externalservice;
 public class HelloWorld {
 
     public static void sayHello() {
-        System.out.print("Hello");
+        System.out.print("Hello World");
     }
 
 }

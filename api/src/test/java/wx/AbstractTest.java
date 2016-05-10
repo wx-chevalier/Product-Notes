@@ -16,6 +16,6 @@ import wx.application.Application;
 @WebAppConfiguration
 @ActiveProfiles("dev")
 @SpringApplicationConfiguration(classes = {Application.class, MockServletContext.class})
-@ImportResource("classpath:spring/applicationContext.xml")
+@ImportResource("classpath:common/resources/spring/applicationContext.xml")
 public class AbstractTest {
 }
