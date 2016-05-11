@@ -45,11 +45,17 @@ Implementation of Reactive Abstract Resource Flow Architecture Style In Java Wit
 ```
 --rootProject：根项目
 	-- api：存放接口，即传统的Controller层
+	-- service：存放服务于模型层
+	-- toolkits：公共的类库
+	-- external：公共的外部服务库，譬如微信公众号、七牛等
+	-- configuration：公共的配置文件库，考虑到api与service在进行单元测试的时候都需要用到这个配置文件
+	-- doc：文档以及接口等使用说明
 ```
 
 
 
 ## Mybatis Generator:自动生成Model
+## Router Generator:自动生成路由
 ## Flyway:DataBase Migration
 
 # Data Format
