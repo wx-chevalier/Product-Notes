@@ -87,6 +87,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-devtools")
     compile group: 'org.springframework', name: 'spring-jdbc', version: '4.2.2.RELEASE'
     compile group: 'org.springframework', name: 'spring-test', version: '4.2.2.RELEASE'
+    compile("com.github.axet:kaptcha:0.0.9")
     compile group: 'org.assertj', name: 'assertj-core', version: '1.6.1'
     compile group: 'com.github.wxyyxc1992', name: 'WXJavaToolkits', version: '0.0.2'
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.3'

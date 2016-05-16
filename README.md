@@ -58,7 +58,14 @@ Implementation of Reactive Abstract Resource Flow Architecture Style In Java Wit
 ## Router Generator:自动生成路由
 ## Flyway:DataBase Migration
 
-# Data Format
+# Request Style
+## Restful
+## Authentic
+验证数据体放在user_token键内,
+
+## Data Format
+
+
 (1)数据格式
 时间格式:所有时间格式以Unix时间戳进行交换,为Long型整数,切记不可有小数点.
 (2)用户认证信息
@@ -81,3 +88,24 @@ public class CustomController extends BasicController{
     }
 }
 ```
+## Service
+
+Service层命名时以`*Service`方式命名,具体的方法还是包含五类:
+
+- get*:获取数据
+    - get*ById:根据ID获取某些数据
+    - get*ByName:根据名称获取某些数据
+- post*:创建某个数据
+- put*:更新某个数据
+- delete*:删除某个数据
+- do*:执行某个复杂操作
+
+## Model
+Model层建议尽量用Mybatis Generator自动生成,命名方式主体还是脱胎于SQL语句:
+
+- select*:查询数据
+    - select*WhereIdEqual
+    - select*whereNameIn
+- insert*:插入数据
+- update*:更新数据
+- delete*:删除数据

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import wx.controller.BasicController;
 import wx.rarf.context.Action;
@@ -14,18 +15,28 @@ import wx.rarf.utils.ErrorConfig;
 import wx.rarf.utils.HJSONObject;
 import wx.rarf.utils.throwable.RARFThrowable;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.time.Instant;
 import java.util.UUID;
+
+import com.google.code.kaptcha.servlet.KaptchaExtend;
 
 /**
  * Created by apple on 16/4/29.
  */
 @RestController("loginController")
-public class LoginController {
+public class LoginController extends KaptchaExtend {
 
     @Autowired
     protected HttpServletRequest request;
+
+    @RequestMapping(value = "/captcha.jpg", method = RequestMethod.GET)
+    public void captcha(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.captcha(req, resp);
+    }
 
     @RequestMapping("/login/{verifyCode}")
     String login(@PathVariable("verifyCode") String verifyCode) {
