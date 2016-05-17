@@ -44,6 +44,7 @@ public class SystemFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) resp;
         response.setDateHeader("Expires", 0);
         response.setHeader("Pragma", "No-Cache");
+        response.setHeader("Access-Control-Allow-Origin","*");
         //设置缓存时间，防止客户端多次重复请求
         response.setHeader("Cache-Control", "max-age=1");
 
