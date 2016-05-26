@@ -13,6 +13,9 @@ project(':api') {
     dependencies {
         compile project(":configuration")
         compile project(":external")
+        compile "io.springfox:springfox-swagger-ui:2.2.2"
+        compile "io.springfox:springfox-swagger2:2.2.2"
+
     }
 
 }
