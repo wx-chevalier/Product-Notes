@@ -1,24 +1,147 @@
-allprojects {
+subprojects {
 
     apply plugin: 'java'
     apply plugin: 'maven'
     apply plugin: 'eclipse'
     apply plugin: 'idea'
 
+    group = 'wx'
+
+    version = '0.0.1'
+
+    sourceCompatibility = 1.8
+
+    targetCompatibility = 1.8
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/main/java'
+            }
+            resources {
+                srcDir 'src/main/resources'
+            }
+        }
+
+        test {
+            java {
+                srcDir 'src/test/java'
+            }
+        }
+    }
+
+
+    //配置资源中心
+    repositories {
+
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+        maven { url "https://jitpack.io" }
+        maven { url "http://repo.maven.apache.org/maven2" }
+    }
+
+    //配置公共依赖项
+    dependencies {
+
+        compile(group: 'org.springframework.boot', name: 'spring-boot-starter-jetty', version: '1.3.3.RELEASE') {
+            /* This dependency was originally in the Maven provided scope, but the project was not of type war.
+            This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
+            Please review and delete this closure when resolved. */
+            exclude(module: 'spring-boot-starter-logging')
+        }
+        compile(group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.3.3.RELEASE') {
+            exclude(module: 'spring-boot-starter-tomcat')
+            exclude(module: 'spring-boot-starter-logging')
+        }
+
+        compile group: 'org.springframework', name: 'spring-test', version: '4.2.2.RELEASE'
+        compile("com.github.axet:kaptcha:0.0.9")
+        compile group: 'org.assertj', name: 'assertj-core', version: '1.6.1'
+        compile group: 'com.github.wxyyxc1992', name: 'WXJavaToolkits', version: '0.0.2'
+        compile group: 'com.alibaba', name: 'fastjson', version: '1.2.3'
+        compile group: 'io.reactivex', name: 'rxjava', version: '1.0.10'
+        compile group: 'org.skyscreamer', name: 'jsonassert', version: '1.2.3'
+        compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.7.3'
+        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.3'
+        compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.4.1'
+        compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.4.1'
+        compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.4.1'
+        compile group: 'org.jsoup', name: 'jsoup', version: '1.8.1'
+        compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.0'
+        compile group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
+        compile 'aspectj:aspectjrt:1.5.4'
+        compile 'aspectj:aspectjweaver:1.5.4'
+        compile "org.projectlombok:lombok:1.12.6"
+
+        compile 'org.dom4j:dom4j:2.0.0'
+        compile group: 'com.squareup.okhttp', name: 'okhttp', version: '2.5.0' //添加okhttp依赖
+
+
+        compile group: 'junit', name: 'junit', version: '4.12'
+
+        testCompile("org.springframework.boot:spring-boot-starter-test") {
+            exclude(module: 'spring-boot-starter-logging')
+        }
+    }
+
 }
 
-
+//考虑到统一依赖声明,所有的子项目的依赖声明都放在这里
+//接口
 project(':api') {
+
 
     dependencies {
         compile project(":configuration")
+        compile project(":model")
         compile project(":external")
+        compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
         compile "io.springfox:springfox-swagger-ui:2.2.2"
         compile "io.springfox:springfox-swagger2:2.2.2"
+        compile group: 'com.caucho', name: 'hessian', version: '4.0.38'
+        compile("org.springframework.boot:spring-boot-starter-actuator") {
+            exclude(module: 'spring-boot-starter-logging')
+        }
+        compile("org.springframework.boot:spring-boot-devtools")
 
     }
 
 }
 
-// Define an extra property
-ext.srcDirName = 'src/main/java'
+//数据模型与数据库操作
+project(':model') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc', version: '4.2.2.RELEASE'
+        compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+        compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.34'
+        compile group: 'org.mybatis', name: 'mybatis', version: '3.3.0'
+        compile group: 'org.mybatis', name: 'mybatis-spring', version: '1.2.3'
+        compile group: 'tk.mybatis', name: 'mapper', version: '3.3.7'
+        compile group: 'redis.clients', name: 'jedis', version: '2.7.2'
+        compile group: 'org.springframework.data', name: 'spring-data-redis', version: '1.5.0.RELEASE'
+        compile group: 'org.redisson', name: 'redisson', version: '2.2.4'
+        compile group: 'net.sf.ehcache', name: 'ehcache', version: '2.9.0'
+        compile group: 'net.spy', name: 'spymemcached', version: '2.11.7'
+        compile group: 'com.github.javaplugs', name: 'mybatis-java-time', version: '0.2'
+    }
+}
+
+//服务模块
+project(':service') {
+
+    dependencies {
+        compile group: 'org.quartz-scheduler', name: 'quartz', version: '2.2.1'
+        compile group: 'org.quartz-scheduler', name: 'quartz-jobs', version: '2.2.1'
+    }
+
+}
+
+//统一配置模块,为了方便显示,配置基本的依赖
+project(':configuration') {
+    dependencies {
+
+        compile group: 'org.springframework', name: 'spring-jdbc', version: '4.2.2.RELEASE'
+        compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+
+    }
+}

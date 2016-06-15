@@ -49,48 +49,48 @@ public class SystemFilter implements Filter {
         response.setHeader("Cache-Control", "max-age=1");
 
         try {
-
-            //判斷用戶是否自帶了Action參數，如果麼有的話默認將Method添加到参数里
-            //添加对于Query方式与REST方式的双重支持
-
-            if (!request.getParameterMap().containsKey("action")) {
-                request.setAttribute("action", request.getMethod());
-            } else {
-                request.setAttribute("action", request.getParameter("action"));
-            }
-
-            //从requestBody中获取请求数据，放置到attribute中
-            String requestBody = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
-
-            if (requestBody != null && requestBody.contains("=")) {
-
-                requestBody = requestBody.replace("&", "");
-
-                requestBody = requestBody.split("=").length == 2 ? requestBody.split("=")[1] : "";
-
-                //判断requestBody是否为JSONObject
-                if (request.getAttribute("requestData") == null && HJSONObject.getJsonType(requestBody) == 0) {
-
-                    JSONObject jsonObject = wx.rarf.utils.HJSONObject.parseObject(requestBody);
-
-                    if (jsonObject != null) {
-
-                        //判读请求体中是否含有action
-                        if (jsonObject.containsKey("action")) {
-                            request.setAttribute("action", jsonObject.get("action"));
-                        }
-
-                        request.setAttribute("requestData", jsonObject.toJSONString());
-
-                    }
-                }
-            }
-
-            if (request.getParameterMap().containsKey("requestData")) {
-
-
-                request.setAttribute("requestData", request.getParameterMap().get("requestData"));
-            }
+//
+//            //判斷用戶是否自帶了Action參數，如果麼有的話默認將Method添加到参数里
+//            //添加对于Query方式与REST方式的双重支持
+//
+//            if (!request.getParameterMap().containsKey("action")) {
+//                request.setAttribute("action", request.getMethod());
+//            } else {
+//                request.setAttribute("action", request.getParameter("action"));
+//            }
+//
+//            //从requestBody中获取请求数据，放置到attribute中
+//            String requestBody = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+//
+//            if (requestBody != null && requestBody.contains("=")) {
+//
+//                requestBody = requestBody.replace("&", "");
+//
+//                requestBody = requestBody.split("=").length == 2 ? requestBody.split("=")[1] : "";
+//
+//                //判断requestBody是否为JSONObject
+//                if (request.getAttribute("requestData") == null && HJSONObject.getJsonType(requestBody) == 0) {
+//
+//                    JSONObject jsonObject = wx.rarf.utils.HJSONObject.parseObject(requestBody);
+//
+//                    if (jsonObject != null) {
+//
+//                        //判读请求体中是否含有action
+//                        if (jsonObject.containsKey("action")) {
+//                            request.setAttribute("action", jsonObject.get("action"));
+//                        }
+//
+//                        request.setAttribute("requestData", jsonObject.toJSONString());
+//
+//                    }
+//                }
+//            }
+//
+//            if (request.getParameterMap().containsKey("requestData")) {
+//
+//
+//                request.setAttribute("requestData", request.getParameterMap().get("requestData"));
+//            }
 
             chain.doFilter(req, resp);
 

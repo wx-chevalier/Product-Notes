@@ -80,7 +80,21 @@ Implementation of Reactive Abstract Resource Flow Architecture Style In Java Wit
 
 ### Method
 
-### RequestData
+### RequestData:请求数据
+
+笔者建议是采用扁平化的请求方式,其优势在于:
+- 在Controller中可以以PathVariable以及RequestParam的方式显示地表明每个Controller的必填参数与选填参数,这样也方便进行单元测试。
+
+- 与下面描述的弃用的JSON方式封装的参数相比,优势在于一个是将取值与默认值这一步交付给了SpringMVC去做,另一个是返回值上可以直接返回一个对象。
+
+请求规范:
+[GET] /api?key1=value1&key2=valu2
+[POST] 
+/api
+Content-Type=application/x-www-form-urlencoded
+key1=value1&key2=valu2
+
+#### 原JSON封装式请求方案:Deprecated
 
 我们会将除路径参数/动作参数外的请求数据放置到requestData中，以JSON形式发起请求。注意，如果我们将requestData放到URL中作为查询参数进行请求时，在部分客户端中需要进行手动的编码：
 

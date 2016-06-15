@@ -1,2 +1,2 @@
 rootProject.name = 'SpringMVC-Boilerplate'
-include 'toolkits','external','api','configuration','service'
+include 'toolkits','external','api','configuration','service','model'

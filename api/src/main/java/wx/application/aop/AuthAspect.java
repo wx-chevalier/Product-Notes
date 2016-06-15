@@ -19,7 +19,7 @@ import java.util.*;
 /**
  * @function 全局的鉴权切面
  */
-@Aspect
+//@Aspect
 @Component("globalAuthAspect")
 public class AuthAspect {
 
@@ -47,49 +47,52 @@ public class AuthAspect {
     @Around("anyController()")
     public Object auth(ProceedingJoinPoint joinPoint) throws Throwable {
 
-        Object[] args = joinPoint.getArgs();
-
-        if (args.length == 0 || !(args[0].getClass().getName().equals("java.lang.String"))) {
-            //目前只有第一個參數為String的才有可能是自動驗證
-            return joinPoint.proceed();
-
-        }
-
-        ////判断是否为免驗證
-        String methodClassName = joinPoint.getTarget().getClass().getName();
-        String methodName = joinPoint.getSignature().getName();
-
-        //判断是否为开放接口
-        if (publicAPIs.containsKey(methodClassName) && publicAPIs.get(methodClassName).contains(methodName)) {
-            return joinPoint.proceed();
-        }
-
-        //如果需要進行驗證的
-        String user_token = (String) args[0];
-
-
-        //获取返回对象
-//        HttpServletResponse response = (HttpServletResponse) args[args.length - 1];
-
-//        Optional<String> result = userTokenServiceImpl.queryUserIdByTokenAsync(user_token).toBlocking().first();
-//
-//        if (result.isPresent()) {
-//
-//            //鑒權成功，將user_id填入新參數
-//            args[0] = result.get();
-//            return joinPoint.proceed(args);
-//
-//        } else {
-//
-//            //如果用戶鑒權失敗
-//            LOG.error("用户鉴权失败：" + user_token);
-//            //記錄日誌
-//            response.getWriter().print(new LFThrowable.Builder().code(ErrorConfig.CODE_1005).subCode(1).desc("用戶鉴权失败").build().toJsonString());
-//            response.getWriter().close();
-//        }
-
-
         return joinPoint.proceed();
+
+
+//        Object[] args = joinPoint.getArgs();
+//
+//        if (args.length == 0 || !(args[0].getClass().getName().equals("java.lang.String"))) {
+//            //目前只有第一個參數為String的才有可能是自動驗證
+//            return joinPoint.proceed();
+//
+//        }
+//
+//        ////判断是否为免驗證
+//        String methodClassName = joinPoint.getTarget().getClass().getName();
+//        String methodName = joinPoint.getSignature().getName();
+//
+//        //判断是否为开放接口
+//        if (publicAPIs.containsKey(methodClassName) && publicAPIs.get(methodClassName).contains(methodName)) {
+//            return joinPoint.proceed();
+//        }
+//
+//        //如果需要進行驗證的
+//        String user_token = (String) args[0];
+//
+//
+//        //获取返回对象
+////        HttpServletResponse response = (HttpServletResponse) args[args.length - 1];
+//
+////        Optional<String> result = userTokenServiceImpl.queryUserIdByTokenAsync(user_token).toBlocking().first();
+////
+////        if (result.isPresent()) {
+////
+////            //鑒權成功，將user_id填入新參數
+////            args[0] = result.get();
+////            return joinPoint.proceed(args);
+////
+////        } else {
+////
+////            //如果用戶鑒權失敗
+////            LOG.error("用户鉴权失败：" + user_token);
+////            //記錄日誌
+////            response.getWriter().print(new LFThrowable.Builder().code(ErrorConfig.CODE_1005).subCode(1).desc("用戶鉴权失败").build().toJsonString());
+////            response.getWriter().close();
+////        }
+//
+//
+//        return joinPoint.proceed();
 
     }
 

@@ -22,7 +22,7 @@ import java.util.Optional;
 /**
  * Created by apple on 15/11/13.
  */
-@Controller
+//@Controller
 public class DispatcherController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class DispatcherController {
     @Autowired
     private ApplicationContext appContext;
 
-    @RequestMapping(value = {"/user/{user_id}", "/user/{user_id}/*", "/user/{user_id}/*/*", "/user/{user_id}/*/*/*", "/user/{user_id}/*/*/*/*", "/user/{user_id}/*/*/*/*/*"})
+//    @RequestMapping(value = {"/user/{user_id}", "/user/{user_id}/*", "/user/{user_id}/*/*", "/user/{user_id}/*/*/*", "/user/{user_id}/*/*/*/*", "/user/{user_id}/*/*/*/*/*"})
     @ResponseBody
     public DeferredResult<String> dispather_user(
             @PathVariable String user_id,//路徑參數,在统一的鉴权的Aspect中完成替换
