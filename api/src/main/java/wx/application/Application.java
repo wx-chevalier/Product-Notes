@@ -3,6 +3,7 @@ package wx.application;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
@@ -16,8 +17,7 @@ import java.util.Arrays;
 /**
  * Created by apple on 16/3/8.
  */
-@EnableAutoConfiguration
-@WebAppConfiguration
+@SpringBootApplication
 @ImportResource("classpath:spring/applicationContext.xml")
 public class Application {
 

@@ -2,6 +2,7 @@ package wx.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
@@ -12,7 +13,7 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 /**
  * Created by apple on 16/3/9.
  */
-@EnableAutoConfiguration
+@SpringBootApplication
 @ImportResource("classpath:spring/applicationContext.xml")
 public class Application4Deploy extends SpringBootServletInitializer {
 
