@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Spring
 
 本部分是笔者在Spring&SpringMVC领域的实践与总结。
@@ -34,3 +35,6 @@
 
 
 
+=======
+# Industrial Application Series
+>>>>>>> b5e7daf044c0e90c7237a05f6e7b8aacc28d5abe
