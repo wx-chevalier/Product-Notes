@@ -16,7 +16,7 @@
 ## MicroSoft Office
 
 
-本部分的核心代码如下，全部代码参考[这里](https://github.com/wxyyxc1992/WXJavaToolkits/blob/master/code/src/main/java/wx/toolkits/storage/pdf/converter/docx/OfficeConverter.java): 
+本部分的核心代码如下，全部代码参考[这里](https://github.com/wx-chevalier/WXJavaToolkits/blob/master/code/src/main/java/wx/toolkits/storage/pdf/converter/docx/OfficeConverter.java): 
 ```private ActiveXComponent oleComponent = null;
 private Dispatch activeDoc = null;
 private final static String APP_ID = "Word.Application";
@@ -138,7 +138,7 @@ public void quit() {
 - [Java调用WPS或pdfcreator的com接口实现doc转pdf](http://www.programgo.com/article/57122675725/) 
 
 
-本文的核心代码如下，完整代码查看[这里](https://github.com/wxyyxc1992/WXJavaToolkits/blob/master/code/src/main/java/wx/toolkits/storage/pdf/converter/docx/WPSConverter.java): 
+本文的核心代码如下，完整代码查看[这里](https://github.com/wx-chevalier/WXJavaToolkits/blob/master/code/src/main/java/wx/toolkits/storage/pdf/converter/docx/WPSConverter.java): 
 
 
 ```        @Override
@@ -351,7 +351,7 @@ System.out.println("Saved " + myResult);
 ## [xdocreport](https://github.com/opensagres/xdocreport) 
 
 
-本文的核心代码如下，完整代码查看[这里](https://github.com/wxyyxc1992/WXJavaToolkits/blob/master/code/src/main/java/wx/toolkits/storage/pdf/converter/docx/POIConverter.java):
+本文的核心代码如下，完整代码查看[这里](https://github.com/wx-chevalier/WXJavaToolkits/blob/master/code/src/main/java/wx/toolkits/storage/pdf/converter/docx/POIConverter.java):
  ```/**
  * @param inpuFile 输入的文件流
  * @param outFile  输出的文件对象
