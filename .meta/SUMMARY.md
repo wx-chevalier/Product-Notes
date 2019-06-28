@@ -64,15 +64,15 @@
 - [Presentation](../文档处理/Presentation/README.md) 
   - [PowerPoint](../文档处理/Presentation/PowerPoint.md) 
 - [工作台](../文档处理/工作台/README.md) 
-  - [Markdown 实战](../文档处理/工作台/Markdown%20实战.md) 
+  - [Markdown 实战](../文档处理/工作台/Markdown 实战.md) 
   - [工具箱](../文档处理/工作台/工具箱.md) 
-  - [我的 App 工作台-不仅仅是技术](../文档处理/工作台/我的%20App%20工作台-不仅仅是技术.md) 
+  - [我的 App 工作台-不仅仅是技术](../文档处理/工作台/我的 App 工作台-不仅仅是技术.md) 
   - [阅读](../文档处理/工作台/阅读.md) 
 
 ## 智能制造 
 
-- [3D 打印](../智能制造/3D%20打印/README.md) 
-- [工业 4.0](../智能制造/工业%204.0/README.md) 
+- [3D 打印](../智能制造/3D 打印/README.md) 
+- [工业 4.0](../智能制造/工业 4.0/README.md) 
 - [工业互联网](../智能制造/工业互联网/README.md) 
 
 ## 电子商务 
