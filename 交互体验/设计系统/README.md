@@ -1,4 +1,4 @@
-# Design System
+# Design System | 设计系统
 
 ![](https://i.postimg.cc/9XP1DRLz/image.png)
 
