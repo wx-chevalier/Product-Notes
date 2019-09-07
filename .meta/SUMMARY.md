@@ -62,17 +62,6 @@
   - [用户识别](../产品设计/运营分析/用户识别.md) 
 - [需求管理](../产品设计/需求管理/README.md) 
 
-## [人文社科](../人文社科/README.md) 
-
-- [Introduction](../人文社科/README.md) 
-
-- [English](../人文社科/English/README.md) 
-  - [Quotations](../人文社科/English/Quotations.md) 
-- [名言明知](../人文社科/名言明知/README.md) 
-- [投资理财](../人文社科/投资理财/README.md) 
-  - [股票](../人文社科/投资理财/股票/README.md) 
-    - [股票术语](../人文社科/投资理财/股票/股票术语.md) 
-
 ## [文档处理](../文档处理/README.md) 
 
 - [Introduction](../文档处理/README.md) 
