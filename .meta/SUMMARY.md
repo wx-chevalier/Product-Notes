@@ -62,25 +62,6 @@
   - [用户识别](../产品设计/运营分析/用户识别.md) 
 - [需求管理](../产品设计/需求管理/README.md) 
 
-## [商业创业](../商业创业/README.md) 
-
-- [Introduction](../商业创业/README.md) 
-
-- [2B](../商业创业/2B/README.md) 
-- [人事](../商业创业/人事/README.md) 
-- [政策](../商业创业/政策/README.md) 
-- [财税](../商业创业/财税/README.md) 
-
-## [投资理财](../投资理财/README.md) 
-
-- [Introduction](../投资理财/README.md) 
-
-- [债券](../投资理财/债券/README.md) 
-- [宏观经济](../投资理财/宏观经济/README.md) 
-- [政策分析](../投资理财/政策分析/README.md) 
-- [股权期权](../投资理财/股权期权/README.md) 
-- [股票基金](../投资理财/股票基金/README.md) 
-
 ## [文档演示](../文档演示/README.md) 
 
 - [Introduction](../文档演示/README.md) 
@@ -106,3 +87,13 @@
   - [工具箱](../文档演示/工作台/工具箱.md) 
   - [我的 App 工作台-不仅仅是技术](../文档演示/工作台/我的 App 工作台-不仅仅是技术.md) 
   - [阅读](../文档演示/工作台/阅读.md) 
+
+## [运营增长](../运营增长/README.md) 
+
+- [Introduction](../运营增长/README.md) 
+
+
+## [项目管理](../项目管理/README.md) 
+
+- [Introduction](../项目管理/README.md) 
+
