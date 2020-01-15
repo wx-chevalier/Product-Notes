@@ -34,7 +34,7 @@
 
 # About
 
-![default](https://i.postimg.cc/y1QXgJ6f/image.png)
+
 
 ## Copyright | 版权
 
