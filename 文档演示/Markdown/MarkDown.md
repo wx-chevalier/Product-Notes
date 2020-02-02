@@ -176,11 +176,11 @@ John 甚至不知道 `go_to()` 方程是干嘛的!
 在 GitHub 的 Markdown（GitHub Flavored Markdown）解析器中，你可以使用特殊的语法表示代码块
 
 ````
-​```ruby
+```ruby
 def foobar
     puts "Hello world!"
 end
-​```
+```
 ````
 
 以上代码不需要缩进，而且 GitHub 会根据`“后指定的语言来进行语法高亮显示
