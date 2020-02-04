@@ -1,7 +1,9 @@
-﻿
-# Docx Template
+﻿# Docx Template
+
 ## [docxtemplater](http://javascript-ninja.fr/docxtemplater/v1/examples/demo.html)
-![](http://javascript-ninja.fr/docxtemplater/v1/examples/images/formatTagging.png) 
+
+![](http://javascript-ninja.fr/docxtemplater/v1/examples/images/formatTagging.png)
+
 ```
 loadFile("tagFormating.docx",function(err,content){
 
@@ -17,5 +19,5 @@ loadFile("tagFormating.docx",function(err,content){
 	saveAs(output,"output.docx")
 });
 ```
-![](http://javascript-ninja.fr/docxtemplater/v1/examples/images/formatTaggingResult.png) 
 
+![](http://javascript-ninja.fr/docxtemplater/v1/examples/images/formatTaggingResult.png)
