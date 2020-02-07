@@ -152,7 +152,7 @@ GitHub 也支持 Markdown，在 GitHub 的 Markdown 解析器中，我们可以�
 
 ## 代码块
 
-代码块（HTML 中 `<code>` 标签）可以由缩进四格（spaces） 或者一个制表符（tab）实现
+代码块（HTML 中 `<code>` 标签）可以由缩进四格（spaces）或者一个制表符（tab）实现
 
 ```
     This is code
