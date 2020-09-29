@@ -84,6 +84,8 @@
       - [PDFView](/文档演示/PDF/PDFView.md)
     - PowerPoint
       - [PPT 模板推介](/文档演示/PowerPoint/PPT%20模板推介.md)
+      - [配色](/文档演示/PowerPoint/配色/README.md)
+        
     - [办公套件](/文档演示/办公套件/README.md)
       
     - 工作台
