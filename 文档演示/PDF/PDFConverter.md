@@ -288,7 +288,6 @@ XComponent xComp = xCompLoader.loadComponentFromURL(
  sUrl, "_blank", 0, propertyValues);
 ```
 
-![](https://coding.net/u/hoteam/p/Cache/git/raw/master/2016/8/2/letterTemplateHighlighted.png)
 然后我们可以使用如下方式对内容进行替换:
 
 ```// Search and replace
@@ -340,8 +339,6 @@ xStorable.storeToURL("file:///" + myResult, propertyValues);
 
 System.out.println("Saved " + myResult);
 ```
-
-![](https://coding.net/u/hoteam/p/Cache/git/raw/master/2016/8/2/letterOutputHighlighted.png)
 
 ## [xdocreport](https://github.com/opensagres/xdocreport)
 
