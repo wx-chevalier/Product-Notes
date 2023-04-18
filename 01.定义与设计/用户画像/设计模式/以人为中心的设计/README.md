@@ -1,4 +1,4 @@
-![以人为主的设计-题字](https://i.postimg.cc/3xRvxwfT/image.png)
+![以人为主的设计-题字](https://assets.ng-tech.icu/item/20230418224001.png)
 
 # 以人为中心的产品设计
 
@@ -6,7 +6,7 @@
 
 譬如我们从设计一个花瓶，可以引申到设计一种让人们能够更好的在家享受花的方式。从设计一个表格，引申到设计一个页面，需要让售后人员一目了然工单的概况与详情。
 
-![](https://i.postimg.cc/tCR1BTjx/image.png)
+![](https://assets.ng-tech.icu/item/20230418224021.png)
 
 - Understand 理解: Generate personas and as-is scenarios. 提炼目标客户，现有的使用故事。
 - Explore 探索：Generate to-be scenarios. 提出理想的使用流程。
