@@ -1,6 +1,6 @@
 # 颜色搭配
 
-![](https://i.postimg.cc/TwNYF10f/image.png)
+![颜色速查表](https://assets.ng-tech.icu/item/20230430221506.png)
 
 # Links
 
