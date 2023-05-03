@@ -1,6 +1,6 @@
 # Product Series | 产品迷思，商业产品经理的自我修养
 
-[Producet Series](https://github.com/wx-chevalier/Product-Series) 承载了笔者对于产品设计、交互体验、文档创作与演示、项目管理、行业视点等多方面的思考。
+[Producet Series](https://github.com/wx-chevalier/Product-Notes) 承载了笔者对于产品设计、交互体验、文档创作与演示、项目管理、行业视点等多方面的思考。
 
 # Preface | 前言
 
